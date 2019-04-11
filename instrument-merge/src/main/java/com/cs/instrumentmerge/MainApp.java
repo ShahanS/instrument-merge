@@ -16,6 +16,8 @@ public class MainApp {
         Instrument lmeInstrument = new Instrument(DateUtils.stringToDate("15-03-2018"), DateUtils.stringToDate("17-03-2018"), "PB", "Lead 13 March 2018", false);
         lmeInstrument.setSource(Source.LME.name());
         lmeInstrumentLmePublisher.add(lmeInstrument);
+
+
         System.out.println(instrumentMergeService.mergeInstruments(lmeInstrumentLmePublisher, Source.LME.name()));
         List<Instrument> instruments = new ArrayList<>();
         Instrument lmeInstrument1 = new Instrument(DateUtils.stringToDate("15-03-2018"), DateUtils.stringToDate("17-03-2018"), "LME_PB", "Lead 13 March 2018", false);
@@ -27,10 +29,6 @@ public class MainApp {
         instruments.add(primeInstrument);
         System.out.println(instrumentMergeService.mergeInstruments(instruments, Source.LME.name()));
         System.out.println(instrumentMergeService.mergeInstruments(instruments, Source.PRIME.name()));
-
-
-
-
     }
 
 
